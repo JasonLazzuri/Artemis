@@ -41,7 +41,7 @@ class ResponsesController < ApplicationController
   def create
     @question = Question.all
 
-    @response = Response.new(respondent_id: params["respondent_id"], question_id: params["response"]["question_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, section_one: nil, section_two: nil,section_three: nil,section_four: nil,section_five: nil,section_six: nil,section_seven: nil)
+    @response = Response.new(respondent_id: params["respondent_id"],answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, section_one: nil, section_two: nil,section_three: nil,section_four: nil,section_five: nil,section_six: nil,section_seven: nil)
 
     i = 1
     answer_hash = Hash.new
@@ -114,7 +114,7 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.fetch(:response).permit(:section_number, :user_selection, :user_score, :question_id, :user_selection, :respondent_id, :answer_hash, :section_one)
+      params.fetch(:response).permit(:section_number, :user_selection, :user_score, :user_selection, :respondent_id, :answer_hash, :section_one)
     end
 
 end
