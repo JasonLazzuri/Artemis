@@ -41,11 +41,7 @@ class ResponsesController < ApplicationController
   def create
     @question = Question.all
 
-<<<<<<< HEAD
-    @response = Response.new(respondent_id: params["respondent_id"],answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, section_one: nil, section_two: nil,section_three: nil,section_four: nil,section_five: nil,section_six: nil,section_seven: nil)
-=======
     @response = Response.new(respondent_id: params["respondent_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, section_one: nil, section_two: nil,section_three: nil,section_four: nil,section_five: nil,section_six: nil,section_seven: nil)
->>>>>>> 723fb3a3411a9dc485778633c5818e718b8b76dd
 
     i = 1
     answer_hash = Hash.new
