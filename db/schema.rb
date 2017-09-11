@@ -99,25 +99,6 @@ ActiveRecord::Schema.define(version: 20170911175801) do
   create_table "questions", force: :cascade do |t|
     t.integer "section_number"
     t.string "question_text"
-    t.integer "quiz_id"
-  end
-
-  create_table "questions_quizzes", force: :cascade do |t|
-    t.integer "question_id"
-    t.integer "quiz_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "quizzes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.integer "cultureOne"
-    t.integer "cultureTwo"
-    t.integer "cultureThree"
-    t.integer "cultureFour"
-    t.integer "cultureFive"
   end
 
   create_table "respondents", force: :cascade do |t|

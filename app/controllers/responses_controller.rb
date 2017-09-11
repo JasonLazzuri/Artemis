@@ -41,7 +41,11 @@ class ResponsesController < ApplicationController
   def create
     @question = Question.all
 
+<<<<<<< HEAD
     @response = Response.new(respondent_id: params["respondent_id"],answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, section_one: nil, section_two: nil,section_three: nil,section_four: nil,section_five: nil,section_six: nil,section_seven: nil)
+=======
+    @response = Response.new(respondent_id: params["respondent_id"], answer_hash: nil, one_hash: nil, two_hash: nil,three_hash: nil, section_one: nil, section_two: nil,section_three: nil,section_four: nil,section_five: nil,section_six: nil,section_seven: nil)
+>>>>>>> 723fb3a3411a9dc485778633c5818e718b8b76dd
 
     i = 1
     answer_hash = Hash.new
@@ -54,7 +58,6 @@ class ResponsesController < ApplicationController
     one_hash = answer_hash.select {|k,v|v == "1"}
     two_hash = answer_hash.select {|k,v|v == "2"}
     three_hash = answer_hash.select {|k,v|v == "3"}
-    binding.pry
 
     section_one = Array(answer_hash)[0..4]
     section_two = Array(answer_hash)[5..19]
@@ -66,10 +69,6 @@ class ResponsesController < ApplicationController
 
     @response.update(answer_hash: answer_hash, one_hash: one_hash, two_hash: two_hash, three_hash: three_hash, section_one: section_one, section_two: section_two, section_three: section_three, section_four: section_four, section_five: section_five, section_six: section_six, section_seven: section_seven)
     @response.save
-
-
-    binding.pry
-
 
     respond_to do |format|
       if @response.save

@@ -4,6 +4,11 @@ $(document).ready(function(){
   $('.quiz2').hide();
   $('.quiz3').hide();
   $('.quiz4').hide();
+  $('.quiz5').hide();
+  $('.quiz6').hide();
+  $('.quiz7').hide();
+  $('.submit').hide();
+
 
   $('#quiz2').hide();
   $('#quiz3').hide();
@@ -12,9 +17,6 @@ $(document).ready(function(){
   $('#quiz6').hide();
   $('#quiz7').hide();
 
-  $('#quiz2').hide();
-  $('#quiz3').hide();
-  $('#quiz4').hide();
 
   $('#heading2').hide();
   $('#heading3').hide();
@@ -68,6 +70,29 @@ $(document).ready(function(){
     return false;
   });
 
+  $('#quiz5').click(function(){
+    $('.quiz5').hide();
+    $('.quiz6').show();
+    $('#quiz5').hide();
+    $('#quiz6').show();
+    $('#heading5').hide();
+    $('#heading6').show();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
+  $('#quiz6').click(function(){
+    $('.quiz6').hide();
+    $('.quiz7').show();
+    $('#quiz6').hide();
+    $('#quiz7').show();
+    $('#heading6').hide();
+    $('#heading7').show();
+    $('.submit').show();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+
 });
 </script>
 
@@ -85,7 +110,6 @@ $(document).ready(function(){
 
 <div class="container">
   <%= form_for @response, url: respondent_responses_path, html: { multipart: true } do |f| %>
-  <%= f.hidden_field :question_id, value:@question.ids  %>
     <% if @response.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
@@ -118,7 +142,7 @@ $(document).ready(function(){
 </div>
 
 <div id="heading5">
-  <h3 >Community Involvement</h3>
+  <h3 id="heading5" >Community Involvement</h3>
     <hr>
 </div>
 
@@ -155,8 +179,7 @@ $(document).ready(function(){
       <hr>
     </div>
   <% if question.id == 5 %>
-    <a style="margin-top:20px;" id="quiz1" class="btn btn-primary">Next</a>
-    <div class="spacer" style="padding:10px;"></div>
+    <a id="quiz1" class="btn btn-primary" style="margin-bottom:20px;">Next</a>
   <% end %>
 
 <% elsif question.section_number == 2 %>
@@ -180,8 +203,7 @@ $(document).ready(function(){
     <hr>
   </div>
   <% if question.id == 20  %>
-    <a style="margin-top:20px;" id="quiz2" class="btn btn-primary">Next</a>
-    <div class="spacer" style="padding:10px;"></div>
+    <a id="quiz2" class="btn btn-primary" style="margin-bottom:20px;">Next</a>
   <% end %>
 
 <% elsif question.section_number == 3 %>
@@ -205,8 +227,7 @@ $(document).ready(function(){
     <hr>
   </div>
   <% if question.id == 26  %>
-    <a style="margin-top:20px;" id="quiz3" class="btn btn-primary">Next</a>
-    <div class="spacer" style="padding:10px;"></div>
+    <a id="quiz3" class="btn btn-primary" style="margin-bottom:20px;">Next</a>
   <% end %>
 
 
@@ -232,13 +253,84 @@ $(document).ready(function(){
     </div>
 
     <% if question.id == 41  %>
-      <a style="margin-top:20px;" id="quiz4" class="btn btn-primary">Next</a>
-      <div class="spacer" style="padding:10px;"></div>
+      <a id="quiz4" class="btn btn-primary" style="margin-bottom:20px;">Next</a>
     <% end %>
 
+  <% elsif question.section_number == 5 %>
+    <div class="quiz5">
+      <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <div class="form-group text">
+          <%= question.question_text %>
+          </div>
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+          <div class="line"></div>
+        </div>
 
-    <% else %>
-    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+        <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <% question.answers.each do |answer| %>
+          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <% if question.id == 45  %>
+      <a id="quiz5" class="btn btn-primary" style="margin-bottom:20px;">Next</a>
+    <% end %>
+
+  <% elsif question.section_number == 6 %>
+    <div class="quiz6">
+      <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <div class="form-group text">
+          <%= question.question_text %>
+          </div>
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+          <div class="line"></div>
+        </div>
+
+        <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <% question.answers.each do |answer| %>
+          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <% if question.id == 51  %>
+      <a id="quiz6" class="btn btn-primary" style="margin-bottom:20px;">Next</a>
+    <% end %>
+
+  <% elsif question.section_number == 7 %>
+    <div class="quiz7">
+      <div class="row">
+        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <div class="form-group text">
+          <%= question.question_text %>
+          </div>
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+          <div class="line"></div>
+        </div>
+
+        <div class="radio col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5">
+          <% question.answers.each do |answer| %>
+          <%= radio_button_tag([:question_id,question.id], [answer.answer_weight]) %> <%= answer.answer_text %> <br>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <% if question.id == 55  %>
+      <%= f.submit 'Submit', :class => 'btn btn-primary submit', :style => "margin-bottom:20px;" %>
+    <% end %>
+
   <% end %>
 
   <% end %>
