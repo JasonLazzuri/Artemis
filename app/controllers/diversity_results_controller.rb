@@ -5,6 +5,18 @@ class DiversityResultsController < ApplicationController
   # GET /diversity_results.json
   def index
     @diversity_results = DiversityResult.all
+    @respondents = Respondent.all
+    @total_score = 0
+
+
+    # @section_one = @response.section_one
+    #
+    # total_one = 0
+    # @section_one.each do |i|
+    #   total_one += i[1].to_i
+    # end
+    # @section_one_total = total_one/5
+
   end
 
   # GET /diversity_results/1
