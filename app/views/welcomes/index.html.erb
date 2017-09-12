@@ -25,4 +25,9 @@
 
 <h4>D & I Assessment</h4>
   <%= link_to 'D&I Quiz', new_respondent_path %>
-</div>
+
+<% if is_admin? %>
+  <h4>D & I Results</h4>
+    <%= link_to 'D&I Results', dandiresults_path %>
+  </div>
+<% end %>

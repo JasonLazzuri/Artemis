@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :dandiresults, only: [:index]
+
   root :to => 'welcomes#index'
   resources :welcomes, only: [:index]
 

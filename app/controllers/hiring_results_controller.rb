@@ -1,9 +1,9 @@
 class HiringResultsController < ApplicationController
-  before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin, only: [:index]
 
 
   def index
-    @assessments = Assessment.paginate(:page => params[:page], :per_page => 1)
+    @assessments = Assessment.paginate(:page => params[:page], :per_page => 10)
   end
 
 
