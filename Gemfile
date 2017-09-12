@@ -30,6 +30,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
 gem "font-awesome-rails"
+gem 'rails_12factor', group: :production
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
