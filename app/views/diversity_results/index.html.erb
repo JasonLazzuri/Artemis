@@ -1,25 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Diversity Results</h1>
 
-<h1>Diversity Results</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Organization</th>
+          <th>Email</th>
+          <th>Result</th>
+          <th>Section 1</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @diversity_results.each do |diversity_result| %>
-      <tr>
-        <td><%= link_to 'Show', diversity_result %></td>
-        <td><%= link_to 'Edit', edit_diversity_result_path(diversity_result) %></td>
-        <td><%= link_to 'Destroy', diversity_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Diversity Result', new_diversity_result_path %>
+      <tbody>
+        <% @respondents.each do |respondent| %>
+          <tr>
+            <td> <%= respondent.id %> </td>
+            <td> <%= respondent.organization %></td>
+            <td> <%= respondent.user_email %></td>
+            <% if respondent.responses.any? %>
+              <td><%= link_to 'Link', respondent_response_path(respondent, respondent.responses.first) %></td>
+            <% elsif  %>
+              <td>No result</td>
+            <% end %>
+            <% if respondent.responses.any? %>
+              <% respondent.responses.first.section_one.each do |score| %>
+              <% @total_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @total_score/5 %> </td>
+            <% elsif  %>
+              <td>No result</td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/diversity_assessment', to: 'diversities#new'
 
   ## D & I assessments (updated) ##
-  resources :respondents, except: [:index] do
+  resources :respondents, only: [:new, :create] do
     resources :responses
   end
   get '/diversity_intro', to: 'respondents#new'

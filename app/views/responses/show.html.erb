@@ -2,7 +2,14 @@
 <div class="container">
   <div class="response-box1">
     <div class="container">
-      <h2 class="well">Your Results</h2>
+
+      <h1 style="text-align:center;"> Thank You for Taking Our Quiz!</h1>
+      <h3>We want this to be a resource for you to be able to recognize where your progress is on your diversity journey as well as be able to facilitate growth in the areas that are lacking.
+      </h3>
+      <br>
+      <h3>Follow the link below your results for more information.</h3>
+
+      <h2 class="well" style="text-align:center;">Summary of Your Results</h2>
       <!-- Category 1 -->
       <div class="row">
         <div class="col-xs-4">
@@ -12,7 +19,7 @@
         </div>
         <div class="col-xs-8">
           <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_one_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_one_total * 10 *2, precision: 0) %>;"> <%= number_to_percentage(@section_one_total * 10 *2, precision: 0) %>
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_one_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_one_total * 10 *2, precision: 0) %>;"> <%= number_to_percentage(@section_one_total * 10 *2, precision: 0) %>
             </div>
           </div>
         </div>
@@ -26,7 +33,7 @@
         </div>
         <div class="col-xs-8">
           <div class="progress">
-            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @section_two_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_two_total * 10 * 2, precision: 0) %>;">
+            <div class="progress-bar progress-bar-coffee" role="progressbar" aria-valuenow="<%= @section_two_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_two_total * 10 * 2, precision: 0) %>;">
 
               <%= number_to_percentage(@section_two_total * 20, precision: 0) %>
             </div>
@@ -57,7 +64,7 @@
         </div>
         <div class="col-xs-8">
           <div class="progress">
-            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_four_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_four_total * 20, precision: 0) %>;">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_four_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_four_total * 20, precision: 0) %>;">
               <%= number_to_percentage(@section_four_total * 20, precision: 0) %>
             </div>
           </div>
@@ -72,7 +79,7 @@
         </div>
         <div class="col-xs-8">
           <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_five_total * 20, precision: 0) %>;">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_five_total * 20, precision: 0) %>;">
               <%= number_to_percentage(@section_five_total * 20, precision: 0) %>
             </div>
           </div>
@@ -88,7 +95,7 @@
         </div>
         <div class="col-xs-8">
           <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @section_six_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_six_total * 20, precision: 0) %>;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= @section_six_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_six_total * 20, precision: 0) %>;">
               <%= number_to_percentage(@section_six_total * 20, precision: 0) %>
             </div>
           </div>
@@ -104,7 +111,7 @@
         </div>
         <div class="col-xs-8">
           <div class="progress">
-            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @section_seven_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>;">
+            <div class="progress-bar progress-bar-grey" role="progressbar" aria-valuenow="<%= @section_seven_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>;">
               <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>
             </div>
           </div>
@@ -112,32 +119,11 @@
       </div>
 
 
-      <!-- <hr>
-        <div class="panel panel-success">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Commitment to Diversity</strong></h3>
-          </div>
-          <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </div>
+      <div class="well">
+        <a href="http://www.artemisconnection.com/diversity-and-inclusion-data-1"style="margin-bottom:20px; text-align:center;" class="btn btn-primary quiz2">Find out more information here</a>
+      </div>
 
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Employment Practices</strong></h3>
-          </div>
-          <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </div>
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Communication</strong></h3>
-          </div>
-          <div class="panel-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
-        </div> -->
+
 
 <!-- Section 1 -->
     <div class="well">
@@ -145,7 +131,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="progress">
-              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_one_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_one_total * 20, precision: 0) %>;"> <%= number_to_percentage(@section_one_total * 20, precision: 0) %>
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_one_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_one_total * 20, precision: 0) %>;"> <%= number_to_percentage(@section_one_total * 20, precision: 0) %>
               </div>
             </div>
           </div>
@@ -160,13 +146,18 @@
         <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
         <% end %>
         <br>
-        <h4> Here are all the questions you scored low on: </h4>
-      <% @section_one_question_ones.each do |q| %>
-          <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-      <% end %>
+      <% if @section_one_question_ones.empty? && @section_one_question_twos.empty? %>
 
-      <% @section_one_question_twos.each do |q| %>
-          <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+      <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_one_question_ones.each do |q| %>
+            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+        <% end %>
+
+        <% @section_one_question_twos.each do |q| %>
+            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -178,7 +169,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="progress">
-              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @section_two_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_two_total * 20, precision: 0) %>;">
+              <div class="progress-bar progress-bar-coffee" role="progressbar" aria-valuenow="<%= @section_two_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_two_total * 20, precision: 0) %>;">
                 <%= number_to_percentage(@section_two_total * 20, precision: 0) %>
               </div>
             </div>
@@ -194,13 +185,19 @@
         <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
         <% end %>
         <br>
-        <h4> Here are all the questions you scored low on: </h4>
-      <% @section_two_question_ones.each do |q| %>
-          <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-      <% end %>
 
-      <% @section_two_question_twos.each do |q| %>
-          <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% if @section_two_question_ones.empty? && @section_two_question_twos.empty? %>
+
+        <% else %>
+            <h4> Here are all the questions you scored low on: </h4>
+          <% @section_two_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_two_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+
       <% end %>
       </div>
 
@@ -226,13 +223,18 @@
         <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
         <% end %>
         <br>
-      <h4> Here are all the questions you scored low on: </h4>
-      <% @section_three_question_ones.each do |q| %>
-          <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-      <% end %>
 
-      <% @section_three_question_twos.each do |q| %>
-          <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+      <% if @section_three_question_ones.empty? && @section_three_question_twos.empty? %>
+        <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_three_question_ones.each do |q| %>
+            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+        <% end %>
+
+        <% @section_three_question_twos.each do |q| %>
+            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% end %>
+
       <% end %>
     </div>
 <!-- Section 4 -->
@@ -241,7 +243,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="progress">
-              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_four_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_four_total * 20, precision: 0) %>;">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_four_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_four_total * 20, precision: 0) %>;">
                 <%= number_to_percentage(@section_four_total * 20, precision: 0) %>
               </div>
             </div>
@@ -258,13 +260,18 @@
         <% end %>
         <br>
 
-      <h4> Here are all the questions you scored low on: </h4>
-      <% @section_three_question_ones.each do |q| %>
-          <%= q %> <p>You answered: Strongly Disagree </p>
-      <% end %>
+      <% if @section_four_question_ones.empty? && @section_four_question_twos.empty?  %>
 
-      <% @section_three_question_twos.each do |q| %>
-          <%= q %> <p>You answered: Disagree</p>
+      <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_four_question_ones.each do |q| %>
+            <%= q %> <p>You answered: Strongly Disagree </p>
+        <% end %>
+
+        <% @section_four_question_twos.each do |q| %>
+            <%= q %> <p>You answered: Disagree</p>
+        <% end %>
+
       <% end %>
     </div>
 
@@ -290,14 +297,17 @@
           <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
           <% end %>
           <br>
+        <% if @section_five_question_ones.empty? && @section_five_question_twos.empty? %>
 
-        <h4> Here are all the questions you scored low on: </h4>
-        <% @section_five_question_ones.each do |q| %>
-            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-        <% end %>
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_five_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
 
-        <% @section_five_question_twos.each do |q| %>
-            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% @section_five_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
         <% end %>
       </div>
 
@@ -308,7 +318,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="progress">
-                <div class="progress-bar progress-bar-progress" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_six_total * 20, precision: 0) %>;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_six_total * 20, precision: 0) %>;">
                   <%= number_to_percentage(@section_six_total * 20, precision: 0) %>
                 </div>
               </div>
@@ -325,13 +335,18 @@
           <% end %>
           <br>
 
-        <h4> Here are all the questions you scored low on: </h4>
-        <% @section_six_question_ones.each do |q| %>
-            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-        <% end %>
+        <% if @section_six_question_ones.empty? && @section_six_question_twos.empty?  %>
 
-        <% @section_six_question_twos.each do |q| %>
-            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_six_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_six_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+
         <% end %>
       </div>
 
@@ -341,7 +356,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>;">
+                <div class="progress-bar progress-bar-grey" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>;">
                   <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>
                 </div>
               </div>
@@ -358,17 +373,25 @@
           <% end %>
           <br>
 
-        <h4> Here are all the questions you scored low on: </h4>
-        <% @section_seven_question_ones.each do |q| %>
-            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
-        <% end %>
+        <% if @section_seven_question_ones.empty? && @section_seven_question_twos.empty? %>
 
-        <% @section_seven_question_twos.each do |q| %>
-            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_seven_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_seven_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
         <% end %>
       </div>
 
   </div>
   </div>
-  <a href="http://www.artemisconnection.com/diversity-and-inclusion-data-1"style="margin-bottom:20px;" class="btn btn-primary quiz2">Click Here for more Info</a>
+<<<<<<< HEAD
+  <a href="http://www.artemisconnection.com/diversity-and-inclusion-data-1"style="margin-bottom:20px;" class="btn btn-primary quiz2">Find Out more information here</a>
+=======
+
+>>>>>>> 53fe1413e696f9d9416dbb49f02bdd3ac38e6cb1
 </div>
