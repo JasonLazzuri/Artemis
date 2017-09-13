@@ -39,6 +39,29 @@
   }
 }
 
+.info-block {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  a {
+    font-size: 1.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    &:hover, &:focus {
+      background: #fff;
+      font-weight: bold;
+    }
+  }
+}
+
+.section-title {
+  font-size: 2em;
+  color: #04395E;
+  margin-bottom: 1em;
+}
+
+
 .di_user_info {
   max-width: 355px;
   margin-top: 1em;
