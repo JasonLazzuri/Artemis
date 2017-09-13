@@ -9,7 +9,13 @@
           <th>Organization</th>
           <th>Email</th>
           <th>Result</th>
-          <th>Section 1</th>
+          <th>Section 1 Avg</th>
+          <th>Section 2 Avg</th>
+          <th>Section 3 Avg</th>
+          <th>Section 4 Avg</th>
+          <th>Section 5 Avg</th>
+          <th>Section 6 Avg</th>
+          <th>Section 7 Avg</th>
         </tr>
       </thead>
 
@@ -26,11 +32,51 @@
             <% end %>
             <% if respondent.responses.any? %>
               <% respondent.responses.first.section_one.each do |score| %>
-              <% @total_score += score[1].to_i  %>
+              <% @section_one_score += score[1].to_i  %>
               <% end %>
-              <td> <%= @total_score/5 %> </td>
+              <td> <%= @section_one_score/5 %> </td>
+
+              <% respondent.responses.first.section_two.each do |score| %>
+              <% @section_two_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @section_two_score/15 %> </td>
+
+              <% respondent.responses.first.section_three.each do |score| %>
+              <% @section_three_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @section_three_score/6 %> </td>
+
+              <% respondent.responses.first.section_four.each do |score| %>
+              <% @section_four_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @section_four_score/15 %> </td>
+
+              <% respondent.responses.first.section_five.each do |score| %>
+              <% @section_five_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @section_five_score/4 %> </td>
+
+              <% respondent.responses.first.section_six.each do |score| %>
+              <% @section_six_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @section_six_score/6 %> </td>
+
+              <% respondent.responses.first.section_seven.each do |score| %>
+              <% @section_seven_score += score[1].to_i  %>
+              <% end %>
+              <td> <%= @section_seven_score/4 %> </td>
+
             <% elsif  %>
               <td>No result</td>
+            <% end %>
+            <% if @section_one_score > 0 %>
+              <% @section_one_score = 0
+                @section_two_score = 0
+                @section_three_score = 0
+                @section_four_score = 0
+                @section_five_score = 0
+                @section_six_score = 0
+                @section_seven_score = 0%>
             <% end %>
           </tr>
         <% end %>

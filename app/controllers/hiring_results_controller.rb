@@ -1,5 +1,4 @@
 class HiringResultsController < ApplicationController
-  before_action :set_admin, only: [:index]
 
 
   def index
@@ -8,6 +7,7 @@ class HiringResultsController < ApplicationController
 
 
   private
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hiring_results_params
