@@ -33,7 +33,7 @@
   }
 }
 
-// Quix Body
+// Quiz Body
 
 .quiz_body {
   h3 {
@@ -120,6 +120,52 @@
 }
 
 // Quiz Result
+
+
+.hiring_result {
+  font-family: 'proxima-bold';
+  .hiring_result_head {
+    h2{
+      color: #758DA2;
+      text-transform: uppercase;
+      font-size: 30px;
+      letter-spacing: .63px;
+      margin: 1em 0;
+    }
+    p {
+      line-height: 1.5;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.response-box {
+  margin-top: 2em;
+  .panel {
+    border: 1px solid #758DA2;
+    .panel-heading {
+      background-color: #758DA2;
+      color: #fff;
+      h4 {
+        font-size: 1.5em;
+      }
+    }
+    .panel-body {
+      padding: 1em 2em 2em;
+      h5 {
+        font-size: 1.25em;
+        margin: 0.8em 0;
+      }
+      p {
+        font-size: 1.5em;
+        color: #508c28;
+      }
+      .btn-apply {
+        margin-top: 0.5em;
+      }
+    }
+  }
+}
 
 .quiz_result {
   font-family: 'proxima-bold', sans-serif;
