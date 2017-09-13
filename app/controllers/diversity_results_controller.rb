@@ -1,13 +1,19 @@
 class DiversityResultsController < ApplicationController
-  before_action :set_diversity_result, only: [:show, :edit, :update, :destroy]
+  before_action :set_diversity_result, only: [:index]
 
   # GET /diversity_results
   # GET /diversity_results.json
   def index
     @diversity_results = DiversityResult.all
-    @respondents = Respondent.all
-    @total_score = 0
+    @respondents = Respondent.paginate(:page => params[:page], :per_page => 10)
 
+    @section_one_score = 0
+    @section_two_score = 0
+    @section_three_score = 0
+    @section_four_score = 0
+    @section_five_score = 0
+    @section_six_score = 0
+    @section_seven_score = 0
 
     # @section_one = @response.section_one
     #
@@ -76,7 +82,6 @@ class DiversityResultsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_diversity_result
-      @diversity_result = DiversityResult.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

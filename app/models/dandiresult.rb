@@ -1,0 +1,2 @@
+class Dandiresult < ApplicationRecord
+end
