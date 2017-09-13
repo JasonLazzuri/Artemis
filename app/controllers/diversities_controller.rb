@@ -1,17 +1,15 @@
 class DiversitiesController < ApplicationController
   before_action :set_diversity, only: [:show, :edit, :update, :destroy]
 
-  # GET /diversities
-  # GET /diversities.json
+
   def index
     @diversities = Diversity.all
   end
 
   def intro
-  end  
+  end
 
-  # GET /diversities/1
-  # GET /diversities/1.json
+
   def show
     @dandi = Diversity.find(params[:id])
 
@@ -30,19 +28,15 @@ class DiversitiesController < ApplicationController
 
   end
 
-  # GET /diversities/new
   def new
     @questions = Question.all
     @answers = Answer.all
     @diversity = Diversity.new
   end
 
-  # GET /diversities/1/edit
   def edit
   end
 
-  # POST /diversities
-  # POST /diversities.json
   def create
     @diversity = Diversity.new(diversity_params)
 
@@ -57,8 +51,7 @@ class DiversitiesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /diversities/1
-  # PATCH/PUT /diversities/1.json
+
   def update
     respond_to do |format|
       if @diversity.update(diversity_params)
@@ -71,8 +64,6 @@ class DiversitiesController < ApplicationController
     end
   end
 
-  # DELETE /diversities/1
-  # DELETE /diversities/1.json
   def destroy
     @diversity.destroy
     respond_to do |format|
@@ -82,12 +73,10 @@ class DiversitiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_diversity
       @diversity = Diversity.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def diversity_params
       params.fetch(:diversity).permit(:diversityOneValue,:diversityTwoValue,:diversityThreeValue, :diversityFourValue, :diversityFiveValue,:diversitySixValue,:diversitySevenValue,:diversityEightValue, :diversityNineValue, :diversityTenValue,
 
