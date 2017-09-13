@@ -1,14 +1,11 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
 
-  # GET /responses
-  # GET /responses.json
   def index
     @responses = Response.all
   end
 
-  # GET /responses/1
-  # GET /responses/1.json
+
   def show
 # section_one
     @section_one = @response.section_one
@@ -159,50 +156,14 @@ class ResponsesController < ApplicationController
     end
 
 
-# summary
-  to = @response.one_hash
-  to.delete! '\\"" {}'
-  to.gsub!(/=>/,',')
-  split = to.split(",")
-  array = eval split.to_s.gsub('"', '')
-  groups = array.in_groups_of(2)
-
-  @ones = []
-  groups.each do |i|
-    @ones.push(Question.find(i[0]).question_text)
   end
 
-
-
-    @onesWeight = []
-    groups.each do |i|
-      @onesWeight.push(Answer.find(i[0]).answer_weight)
-    end
-
-    @average = @onesWeight.inject{ |sum, el| sum + el }.to_f / @onesWeight.size
-
-    @section_one = @response.section_one
-    total_one = 0
-      @section_one.each do |i|
-      total_one += i[1].to_i
-      end
-    @section_one_total = total_one/5
-
-  end
-
-  # GET /responses/new
   def new
     @response = Response.new
     @question = Question.all
     @answers = Answer.all
   end
 
-  # GET /responses/1/edit
-  def edit
-  end
-
-  # POST /responses
-  # POST /responses.json
   def create
     @question = Question.all
 
@@ -258,8 +219,6 @@ class ResponsesController < ApplicationController
     end
   end
 
-  # DELETE /responses/1
-  # DELETE /responses/1.json
   def destroy
     @response.destroy
     respond_to do |format|
@@ -269,12 +228,10 @@ class ResponsesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_response
       @response = Response.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
       params.fetch(:response).permit(:section_number, :user_selection, :user_score, :user_selection, :respondent_id, :answer_hash, :section_one, :section_two, :section_three, :section_four, :section_five, :section_six, :section_seven)
     end

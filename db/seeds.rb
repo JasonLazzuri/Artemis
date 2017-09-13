@@ -14,6 +14,35 @@ class Seed
   def self.begin
     seed = Seed.new
     seed.make_questions
+    seed.make_users
+  end
+
+  def make_users
+    User.create!(
+    email: "michelle@artemisconnection.com",
+    password: 'Scout.1120',
+    admin: true
+    )
+    User.create!(
+    email: "jordanc@aretemisconection.com",
+    password: 'Artemis!23',
+    admin: true
+    )
+    User.create!(
+    email: "anna@artemisconnection.com",
+    password: 'Artemis5432',
+    admin: true
+    )
+    User.create!(
+    email: "alina@artemisconnection.com",
+    password: 'art17PaKm412!',
+    admin: true
+    )
+    User.create!(
+    email: "christy@artemisconnection.com ",
+    password: 'ACI0252017',
+    admin: true
+    )
   end
 
   def make_questions
