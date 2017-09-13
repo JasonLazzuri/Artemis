@@ -90,7 +90,7 @@ class Seed
           answer_weight: 1
         },
         {
-          answer_text: 'We taken actions to address this, but have not initiated a discussion.',
+          answer_text: 'We’ve taken actions to address this, but have not initiated a discussion.',
           answer_weight: 2
         },
         {
@@ -146,7 +146,7 @@ class Seed
         answer_weight: 1
       },
       {
-        answer_text: 'We taken actions to address this, but have not initiated a discussion.',
+        answer_text: 'We’ve taken actions to address this, but have not initiated a discussion.',
         answer_weight: 2
       },
       {

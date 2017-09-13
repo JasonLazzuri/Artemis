@@ -1,3 +1,50 @@
-// Place all the styles related to the respondents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// D&I Intro
+.diversity_intro {
+  margin-top: 1em;
+  padding: 0 1em;
+  h2 {
+    text-align: center;
+    color: #738FA4;
+    font-family: 'Proxima-bold';
+    margin: 1em 0;
+  }
+  .well {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+  p {
+    font-size: 1.5em;
+    line-height: 1.5;
+    margin-bottom: 1.2em;
+  }
+  a {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: #000;
+    }
+    span {
+      color: #738FA4;
+      font-family: 'Proxima-bold';
+      font-size: 1.5em;
+      padding-right: 0.5em;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.di_user_info {
+  max-width: 355px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  .form-group {
+    .form-control {
+    }
+  }
+}

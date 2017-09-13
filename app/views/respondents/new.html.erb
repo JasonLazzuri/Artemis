@@ -1,7 +1,13 @@
 <div class="container">
-  <h1>Create A User</h1>
-  <h4>In order to take the quiz, you must fill out this user form</h4>
-
-
-  <%= render 'form', respondent: @respondent %>
+  <div class="row diversity_intro">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Diversity &amp; Inclusion Self-Assessment</h2>
+      <div class="well">
+        <p>
+          We’re excited you’re taken the the first step toward understanding the progress you’ve made in creating a diverse and inclusive workplace. Please enter your email below to get started.
+        </p>
+        <%= render 'form', respondent: @respondent %>
+      </div>
+    </div>
+  </div>
 </div>

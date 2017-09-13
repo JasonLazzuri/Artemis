@@ -25,15 +25,10 @@ class RespondentsController < ApplicationController
   # POST /respondents.json
   def create
     @respondent = Respondent.new(respondent_params)
-
-    respond_to do |format|
-      if @respondent.save
-        format.html { redirect_to @respondent, notice: 'Respondent was successfully created.' }
-        format.json { render :show, status: :created, location: @respondent }
-      else
-        format.html { render :new }
-        format.json { render json: @respondent.errors, status: :unprocessable_entity }
-      end
+    if @respondent.save
+      redirect_to new_respondent_response_path(@respondent);
+    else
+      render :new;
     end
   end
 

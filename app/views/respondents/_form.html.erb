@@ -1,37 +1,20 @@
 <%= form_for [@respondent],url: respondents_path, html: { multipart: true } do |f| %>
+  <div class="di_user_info">
+    <div class="form-group">
+      <%= f.text_field :organization, placeholder: "Organization", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.email_field :user_email, placeholder: "Email", class: "form-control" %>
+    </div>
+    <%= f.submit 'Begin assessment', :class => 'btn btn-primary btn-submit' %>
+  </div>
   <% if respondent.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(respondent.errors.count, "error") %> prohibited this respondent from being saved:</h2>
-
       <ul>
-      <% respondent.errors.full_messages.each do |message| %>
+      <% respondent.errors.each do | key, message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div id="email" class="row well">
-    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
-      <div class="form-group">
-      <%= f.label :name, "User Name", :class => "smaller_text" %>
-      <br>
-      <%= f.text_field :user_name %>
-      <br>
-      <%= f.label :user_email, "Email Address", :class => "smaller_text" %>
-      <br>
-      <%= f.text_field :user_email %>
-      <br>
-      <br>
-      <%= f.label :organization, "Organization/Company", :class => "smaller_text" %>
-      <br>
-      <%= f.text_field :organization %>
-      <br>
-      <br>
-      <%= f.submit 'Submit', :class => 'btn btn-primary' %>
-      </div>
-    </div>
-    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-  </div>
 <% end %>

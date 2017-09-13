@@ -76,7 +76,8 @@
   font-family: 'proxima-bold', sans-serif;
   .text{
     letter-spacing: 2px;
-    text-transform: uppercase;    font-size: 16px;
+    text-transform: uppercase;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 1.2em;
   }
@@ -116,4 +117,20 @@
 .smaller_text{
   font-family: 'proxima-thin';
   font-weight:lighter;
+}
+
+// Quiz Result
+
+.quiz_result {
+  font-family: 'proxima-bold', sans-serif;
+  .quiz_result_head {
+    width: 80%;
+    margin: 0 auto;
+    h3 {
+      line-height: 1.5;
+    }
+  }
+  .quiz_result_body {
+    border: 1px solid;
+  }
 }

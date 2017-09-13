@@ -17,29 +17,44 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "diversities.scss";
+@import "respondents.scss";
 @import "font-awesome";
 
+
  #header {
-     padding:10px 30px;
-     -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-     box-sizing: border-box;
-     z-index: 1000;
-     top: -20px;
-     left: 0;
-     width: 100%;
-     line-height: 1em;
-     background-color: #c8c9cb;
-     -moz-osx-font-smoothing: auto;
-     -webkit-font-smoothing: subpixel-antialiased;
-     position: relative;
+  padding: 1.5em 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+  line-height: 1em;
+  background-color: #c8c9cb;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  position: relative;
+ }
+
+ #logoImage {
+     margin: 0;
+     font-size: 0;
+     max-width: 100%;
  }
 
  #logoImage img {
     height: auto;
-    max-height: 100px;
+    // max-height: 100px;
     width: auto;
     max-width: 100%;
+}
+
+.image{
+ width: 100%;
+ height: 250px;
+ margin-top: -30px;
+ background-image: url("hands.jpg");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: 50% 50%;
 }
 
 h1{
@@ -51,15 +66,67 @@ h1{
   margin-bottom: 1em;
 }
 
+#header #logoWrapper, #header #logoImage {
+    max-width: 315px;
+}
+// @media only screen and (min-width: 641px) {
+// #header #logoWrapper, #header #siteTitleWrapper, #header #headerNav {
+//     box-sizing: border-box;
+//     display: table-cell;
+//     vertical-align: middle;
+//   }
+// }
 
-.image{
- width: 100%;
- height: 250px;
- margin-top: -30px;
- background-image: url("hands.jpg");
- background-size: cover;
- background-repeat: no-repeat;
- background-position: 50% 50%;
+#header {
+  #logoWrapper {
+    float: left;
+  }
+  .header-nav {
+    float: right;
+    list-style: none;
+    margin-top: 21px;
+    margin-right: 1em;
+    li {
+      float: left;
+      margin-right: 0.2em;
+      a {
+        display: block;
+        padding: 1em 1.3em;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 12.5px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 1em;
+        background: transparent;
+      }
+      .nav-contact {
+        border: 2px solid #fff;
+        border-radius: 300px;
+        margin-left: 1em;
+        padding: 1em 1.5em;
+        &:hover {
+          color: #000;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 878px) {
+  .header-nav {
+    display: none;
+  }
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 #paragraph{

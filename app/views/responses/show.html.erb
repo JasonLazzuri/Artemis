@@ -1,3 +1,397 @@
-<p id="notice"><%= notice %></p>
 
-<%= @ones[0] %>
+<div class="container">
+  <div class="response-box1">
+    <div class="container">
+
+      <h1 style="text-align:center;"> Thank You for Taking Our Quiz!</h1>
+      <h3>We want this to be a resource for you to be able to recognize where your progress is on your diversity journey as well as be able to facilitate growth in the areas that are lacking.
+      </h3>
+      <br>
+      <h3>Follow the link below your results for more information.</h3>
+
+      <h2 class="well" style="text-align:center;">Summary of Your Results</h2>
+      <!-- Category 1 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Commitment and Strategy
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_one_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_one_total * 10 *2, precision: 0) %>;"> <%= number_to_percentage(@section_one_total * 10 *2, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Category 2 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Talent Management
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar progress-bar-coffee" role="progressbar" aria-valuenow="<%= @section_two_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_two_total * 10 * 2, precision: 0) %>;">
+
+              <%= number_to_percentage(@section_two_total * 20, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Category 3 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Business Processes
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @section_three_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_three_total * 20, precision: 0) %>;">
+              <%= number_to_percentage(@section_three_total * 20, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Category 4 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Culture
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_four_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_four_total * 20, precision: 0) %>;">
+              <%= number_to_percentage(@section_four_total * 20, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Category 5 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Community Involvement
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_five_total * 20, precision: 0) %>;">
+              <%= number_to_percentage(@section_five_total * 20, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Category 6 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Communication
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<%= @section_six_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_six_total * 20, precision: 0) %>;">
+              <%= number_to_percentage(@section_six_total * 20, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Category 7 -->
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="categories-title">
+            Measurement and Evaluation
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div class="progress">
+            <div class="progress-bar progress-bar-grey" role="progressbar" aria-valuenow="<%= @section_seven_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>;">
+              <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="well">
+        <a href="http://www.artemisconnection.com/diversity-and-inclusion-data-1"style="margin-bottom:20px; text-align:center;" class="btn btn-primary quiz2">Find out more information here</a>
+      </div>
+
+
+
+<!-- Section 1 -->
+    <div class="well">
+      <h4>Commitment and Strategy Section:</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress">
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= @section_one_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_one_total * 20, precision: 0) %>;"> <%= number_to_percentage(@section_one_total * 20, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @section_one_total >= 4 %>
+        <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+        <% elsif @section_one_total == 3%>
+        <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+        <% elsif @section_one_total == 2%>
+        <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+        <% else @section_one_total == 1%>
+        <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+        <% end %>
+        <br>
+      <% if @section_one_question_ones.empty? && @section_one_question_twos.empty? %>
+
+      <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_one_question_ones.each do |q| %>
+            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+        <% end %>
+
+        <% @section_one_question_twos.each do |q| %>
+            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+
+<!-- Section 2 -->
+      <div class="well">
+        <h4>Talent Management Section:</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress">
+              <div class="progress-bar progress-bar-coffee" role="progressbar" aria-valuenow="<%= @section_two_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_two_total * 20, precision: 0) %>;">
+                <%= number_to_percentage(@section_two_total * 20, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @section_two_total >= 4 %>
+        <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+        <% elsif @section_two_total == 3%>
+        <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+        <% elsif @section_two_total == 2%>
+        <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+        <% else @section_two_total == 1%>
+        <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+        <% end %>
+        <br>
+
+        <% if @section_two_question_ones.empty? && @section_two_question_twos.empty? %>
+
+        <% else %>
+            <h4> Here are all the questions you scored low on: </h4>
+          <% @section_two_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_two_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+
+      <% end %>
+      </div>
+
+<!-- Section 3 -->
+    <div class="well">
+      <h4>Business Processes Section:</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @section_three_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_three_total * 20, precision: 0) %>;">
+                <%= number_to_percentage(@section_three_total * 20, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @section_three_total >= 4 %>
+        <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+        <% elsif @section_three_total == 3%>
+        <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+        <% elsif @section_three_total == 2%>
+        <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+        <% else @section_three_total == 1%>
+        <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+        <% end %>
+        <br>
+
+      <% if @section_three_question_ones.empty? && @section_three_question_twos.empty? %>
+        <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_three_question_ones.each do |q| %>
+            <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+        <% end %>
+
+        <% @section_three_question_twos.each do |q| %>
+            <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+        <% end %>
+
+      <% end %>
+    </div>
+<!-- Section 4 -->
+    <div class="well">
+      <h4>Culture Section:</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @section_four_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_four_total * 20, precision: 0) %>;">
+                <%= number_to_percentage(@section_four_total * 20, precision: 0) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if @section_four_total >= 4 %>
+        <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+        <% elsif @section_four_total == 3%>
+        <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+        <% elsif @section_four_total == 2%>
+        <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+        <% else @section_four_total == 1%>
+        <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+        <% end %>
+        <br>
+
+      <% if @section_four_question_ones.empty? && @section_four_question_twos.empty?  %>
+
+      <% else %>
+        <h4> Here are all the questions you scored low on: </h4>
+        <% @section_four_question_ones.each do |q| %>
+            <%= q %> <p>You answered: Strongly Disagree </p>
+        <% end %>
+
+        <% @section_four_question_twos.each do |q| %>
+            <%= q %> <p>You answered: Disagree</p>
+        <% end %>
+
+      <% end %>
+    </div>
+
+<!-- Section 5 -->
+      <div class="well">
+        <h4>Community Involvement Section:</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_five_total * 20, precision: 0) %>;">
+                  <%= number_to_percentage(@section_five_total * 20, precision: 0) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if @section_five_total >= 4 %>
+          <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+          <% elsif @section_five_total == 3%>
+          <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+          <% elsif @section_five_total == 2%>
+          <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+          <% else @section_five_total == 1%>
+          <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+          <% end %>
+          <br>
+        <% if @section_five_question_ones.empty? && @section_five_question_twos.empty? %>
+
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_five_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_five_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+        <% end %>
+      </div>
+
+
+<!-- Section 6 -->
+      <div class="well">
+        <h4>Communication Section:</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_six_total * 20, precision: 0) %>;">
+                  <%= number_to_percentage(@section_six_total * 20, precision: 0) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if @section_six_total >= 4 %>
+          <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+          <% elsif @section_six_total == 3%>
+          <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+          <% elsif @section_six_total == 2%>
+          <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+          <% else @section_six_total == 1%>
+          <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+          <% end %>
+          <br>
+
+        <% if @section_six_question_ones.empty? && @section_six_question_twos.empty?  %>
+
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_six_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_six_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+
+        <% end %>
+      </div>
+
+<!-- Section 7 -->
+      <div class="well">
+        <h4>Measurement and Evaluation Section:</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="progress">
+                <div class="progress-bar progress-bar-grey" role="progressbar" aria-valuenow="<%= @section_five_total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>;">
+                  <%= number_to_percentage(@section_seven_total * 20, precision: 0) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if @section_seven_total >= 4 %>
+          <h4>Congratulations, you have been thoughtful and intentional in your approach to diversity and inclusion. However, there are always more ways to improve so read on to get some advice and inspiration.</h4>
+          <% elsif @section_seven_total == 3%>
+          <h4>Well done, you have made a lot of progress towards becoming a diverse and inclusive company. Read on to find out how you can improve further and bring your efforts in line with industry best practices.</h4>
+          <% elsif @section_seven_total == 2%>
+          <h4>You have made some progress towards becoming a more diverse and inclusive company but there is still work to be done to align with current industry best practices. Review your responses and read on to learn more.</h4>
+          <% else @section_seven_total == 1%>
+          <h4>You are at the beginning of your diversity and inclusion journey. We recommend you review your responses below and identify what specifically you can work on and then continue to the next page to access more information.</h4>
+          <% end %>
+          <br>
+
+        <% if @section_seven_question_ones.empty? && @section_seven_question_twos.empty? %>
+
+        <% else %>
+          <h4> Here are all the questions you scored low on: </h4>
+          <% @section_seven_question_ones.each do |q| %>
+              <%= q %> <p>You answered: We’ve taken no actions to address this. </p>
+          <% end %>
+
+          <% @section_seven_question_twos.each do |q| %>
+              <%= q %> <p>You answered: We taken limited actions to address this, but have not created verbal and written standards.</p>
+          <% end %>
+        <% end %>
+      </div>
+
+  </div>
+  </div>
+<<<<<<< HEAD
+  <a href="http://www.artemisconnection.com/diversity-and-inclusion-data-1"style="margin-bottom:20px;" class="btn btn-primary quiz2">Find Out more information here</a>
+=======
+
+>>>>>>> 53fe1413e696f9d9416dbb49f02bdd3ac38e6cb1
+</div>

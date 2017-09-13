@@ -7,6 +7,9 @@ class DiversitiesController < ApplicationController
     @diversities = Diversity.all
   end
 
+  def intro
+  end  
+
   # GET /diversities/1
   # GET /diversities/1.json
   def show
