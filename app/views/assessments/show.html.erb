@@ -12,96 +12,115 @@
     </div>
   </div>
 </div> -->
-
-<% if @remoteScore >= 14 && @strategyScore >= 16 %>
-  <div class="response-box1">
-    <div class="container">
-      <h2 class="well">Your Results</h2>
-      <div class="container">
-        <h4>Thank you for taking our quiz. This gives us a sense of who you are and serves as a tool for you to evaluate if strategy consulting and working in a remote environment is right for you.</h4>
-        <br>
-        <div class="panel panel-info">
-          <div class="panel-heading">
-          <h4 class="panel-title">Artemis Connection Quiz</h4>
-          </div>
-
-          <div class="row panel-body" >
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:40px;">
-              <div class="w3-border">
-                <div class="w3-grey" style="height:24px; width:100%; text-align:center; background-color:#758DA2!important">100%</div>
+<div class="container">
+  <div class="row hiring_result">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="hiring_result_head">
+        <h2 class="text">Your Results</h2>
+        <p>Thank you for taking our quiz. This gives us a sense of who you are and serves as a tool for you to evaluate if strategy consulting and working in a remote environment is right for you.</p>
+      </div>
+      <% if @remoteScore >= 14 && @strategyScore >= 16 %>
+        <div class="response-box">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Summary</h4>
+              </div>
+              <div class="panel-body" >
+                <h2>Your Scores:</h2>
+                <h5>Remote Score: <%= @remoteScore %> </h5>
+                <h5>Strategy Score: <%= @remoteScore %> </h5>
+                <p>
+                  We think you're going to love working remotely! You seem to have all the right qualities it takes to work in a remote environment and enjoy our line of work. We encourage you to take the next step by completing our application.
+                </p>
+                <a href="http://www.artemisconnection.com/application" class="btn btn-default btn-apply btn-lg" style="margin-left:10px">Apply</a>
               </div>
             </div>
-
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:20px;">
-              We think you're going to love working remotely! You seem to have all the right qualities it takes to work in a remote environment and enjoy our line of work. We encourage you to take the next step by completing our application.
-              <br>
-              <br>
-            </div>
-            <a href="http://www.artemisconnection.com/application" class="btn btn-primary" style="margin-left:10px">Apply</a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-<% elsif @remoteScore >= 10 && @strategyScore >= 14 %>
-  <div class="container">
-    <h2 class="well">Your Results</h2>
-    <div class="container">
-      <h4>Thank you for taking our quiz. This gives us a sense of who you are and serves as a tool for you to evaluate if strategy consulting and working in a remote environment is right for you.</h4>
-      <br>
-      <div class="panel panel-info">
-        <div class="panel-heading">
-        <h4 class="panel-title">Artemis Connection Quiz</h4>
-        </div>
-
-        <div class="row panel-body">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="margin-top:40px;">
-            <div class="w3-border">
-              <div class="w3-grey" style="height:24px; width:80%; text-align:center; background-color:#758DA2!important">80%</div>
+      <% elsif @remoteScore >= 10 && @strategyScore >= 14 %>
+        <div class="response-box">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Summary</h4>
+              </div>
+              <div class="panel-body" >
+                <h2>Your Scores:</h2>
+                <h5>Remote Score: <%= @remoteScore %> </h5>
+                <h5>Strategy Score: <%= @remoteScore %> </h5>
+                <p>
+                  We think you would be a strong remote worker but don't quite have the collaborator experience. Since you are so close to being a good fit, why not apply and we will see if we can work with you.
+                </p>
+                <a href="http://www.artemisconnection.com/application" class="btn btn-default btn-apply btn-lg">Apply</a>
+              </div>
             </div>
           </div>
 
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:20px;">
-            We think you would be a strong remote worker but don't quite have the collaborator experience. Since you are so close to being a good fit, why not apply and we will see if we can work with you.
-            <br>
+        </div>
+      <% elsif @remoteScore < 10 || @strategyScore < 12 %>
+      <div class="response-box">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Summary</h4>
+            </div>
+            <div class="panel-body" >
+              <p>Strategy and remote work is not for everyone. We find people that gravitate towards it enjoy problem solving, are open to learning new technologies, self-motivated and are comfortable not working in a social environment.
+                </p>
+              <h2 style="margin-bottom: 0.5em;">We wish you best in your search and recommend you check out the following companies:</h2>
+              <h4>Ex-Consultants Agency: <a href="https://www.exconsultantsagency.com/">https://www.exconsultantsagency.com/</a></h4>
+              <h4>SpareHire: <a href="http://www.sparehire.com">sparehire.com</a></h4>
+              <h4>Hillgate: <a href="https://www.hillgateconnect.com/">https://www.hillgateconnect.com/</a></h4>
+              <h4>AngelList: <a href="https://angel.co/">https://angel.co/</a></h4>
+              <h4>Catalant: <a href="https://gocatalant.com/">https://gocatalant.com/</a></h4>
+              <h4>Remote.co: <a href="https://remote.co/">https://remote.co/</a></h4>
+              <h4>Flexjobs: <a href="https://www.flexjobs.com/">https://www.flexjobs.com/</a></h4>
+              <h4>Talent Response: <a href="http://www.talentresponse.com/">http://www.talentresponse.com/</a></h4>
+              <h4>Business Talent Group: <a href="https://businesstalentgroup.com">https://businesstalentgroup.com</a></h4>
+              <a href="http://www.artemisconnection.com/" class="btn btn-default btn-apply btn-lg">Back To Home</a>
+            </div>
           </div>
-          <a href="http://www.artemisconnection.com/application" class="btn btn-primary" style="margin-left:10px">Apply</a>
         </div>
       </div>
-    </div>
-  </div>
-<% elsif @remoteScore < 10 || @strategyScore < 12 %>
-  <div class="container">
-    <h2 class="well">Your Results</h2>
-    <div class="container">
-      <h4>Thank you for taking our quiz. This gives us a sense of who you are and serves as a tool for you to evaluate if strategy consulting and working in a remote environment is right for you.</h4>
-      <br>
-      <div class="panel panel-info">
-        <div class="panel-heading">
-        <h4 class="panel-title">Artemis Connection Quiz</h4>
-        </div>
 
-        <div class="row panel-body">
+        <!-- <div class="response-box"> -->
+          <!-- <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4 class="panel-title">Summary</h4>
+              <p style="font-size:18px;">Strategy and remote work is not for everyone. We find people that gravitate towards it enjoy problem solving, are open to learning new technologies, self-motivated and are comfortable not working in a social environment.
+                </p>
+              <h3>We wish you best in your search and recommend you check out the following companies:</h3>
+              <h4>Ex-Consultants Agency: <a href="https://www.exconsultantsagency.com/">https://www.exconsultantsagency.com/</a></h4>
+              <h4>SpareHire: <a href="http://www.sparehire.com">sparehire.com</a></h4>
+              <h4>Hillgate: <a href="https://www.hillgateconnect.com/">https://www.hillgateconnect.com/</a></h4>
+              <h4>AngelList: <a href="https://angel.co/">https://angel.co/</a></h4>
+              <h4>Catalant: <a href="https://gocatalant.com/">https://gocatalant.com/</a></h4>
+              <h4>Remote.co: <a href="https://remote.co/">https://remote.co/</a></h4>
+              <h4>Flexjobs: <a href="https://www.flexjobs.com/">https://www.flexjobs.com/</a></h4>
+              <h4>Talent Response: <a href="http://www.talentresponse.com/">http://www.talentresponse.com/</a></h4>
+              <h4>Business Talent Group: <a href="https://businesstalentgroup.com">https://businesstalentgroup.com</a></h4>
+            </div>
+            <a href="http://www.artemisconnection.com/" class="btn btn-primary btn-lg btn" style="margin-left:10px">Back To Home</a>
+            </div>
 
-          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <p style="font-size:18px;">Strategy and remote work is not for everyone. We find people that gravitate towards it enjoy problem solving, are open to learning new technologies, self-motivated and are comfortable not working in a social environment.
-            </p>
-            <h3>We wish you best in your search and recommend you check out the following companies:</h3>
-
-      <h4>Ex-Consultants Agency: <a href="https://www.exconsultantsagency.com/">https://www.exconsultantsagency.com/</a></h4>
-      <h4>SpareHire: <a href="http://www.sparehire.com">sparehire.com</a></h4>
-      <h4>Hillgate: <a href="https://www.hillgateconnect.com/">https://www.hillgateconnect.com/</a></h4>
-      <h4>AngelList: <a href="https://angel.co/">https://angel.co/</a></h4>
-      <h4>Catalant: <a href="https://gocatalant.com/">https://gocatalant.com/</a></h4>
-      <h4>Remote.co: <a href="https://remote.co/">https://remote.co/</a></h4>
-      <h4>Flexjobs: <a href="https://www.flexjobs.com/">https://www.flexjobs.com/</a></h4>
-      <h4>Talent Response: <a href="http://www.talentresponse.com/">http://www.talentresponse.com/</a></h4>
-      <h4>Business Talent Group: <a href="https://businesstalentgroup.com">https://businesstalentgroup.com</a></h4>
+            <div class="row panel-body">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <p style="font-size:18px;">Strategy and remote work is not for everyone. We find people that gravitate towards it enjoy problem solving, are open to learning new technologies, self-motivated and are comfortable not working in a social environment.
+                  </p>
+                <h3>We wish you best in your search and recommend you check out the following companies:</h3>
+                <h4>Ex-Consultants Agency: <a href="https://www.exconsultantsagency.com/">https://www.exconsultantsagency.com/</a></h4>
+                <h4>SpareHire: <a href="http://www.sparehire.com">sparehire.com</a></h4>
+                <h4>Hillgate: <a href="https://www.hillgateconnect.com/">https://www.hillgateconnect.com/</a></h4>
+                <h4>AngelList: <a href="https://angel.co/">https://angel.co/</a></h4>
+                <h4>Catalant: <a href="https://gocatalant.com/">https://gocatalant.com/</a></h4>
+                <h4>Remote.co: <a href="https://remote.co/">https://remote.co/</a></h4>
+                <h4>Flexjobs: <a href="https://www.flexjobs.com/">https://www.flexjobs.com/</a></h4>
+                <h4>Talent Response: <a href="http://www.talentresponse.com/">http://www.talentresponse.com/</a></h4>
+                <h4>Business Talent Group: <a href="https://businesstalentgroup.com">https://businesstalentgroup.com</a></h4>
+              </div>
+              <a href="http://www.artemisconnection.com/" class="btn btn-primary" style="margin-left:10px">Back To Home</a>
+            </div>
           </div>
-          <a href="http://www.artemisconnection.com/" class="btn btn-primary" style="margin-left:10px">Back To Artemis</a>
-        </div>
-      </div>
+        </div> -->
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>
