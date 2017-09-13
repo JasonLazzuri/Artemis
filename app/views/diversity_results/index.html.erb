@@ -28,7 +28,7 @@
             <% if respondent.responses.any? %>
               <td><%= link_to 'Link', respondent_response_path(respondent, respondent.responses.first) %></td>
             <% elsif  %>
-              <td>No result</td>
+              <td> - </td>
             <% end %>
             <% if respondent.responses.any? %>
               <% respondent.responses.first.section_one.each do |score| %>
@@ -67,7 +67,7 @@
               <td> <%= @section_seven_score/4 %> </td>
 
             <% elsif  %>
-              <td>No result</td>
+              <td> - </td>
             <% end %>
             <% if @section_one_score > 0 %>
               <% @section_one_score = 0
