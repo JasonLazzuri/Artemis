@@ -23,6 +23,8 @@
 
 3. [Editing this Application](#i)
 
+4. [Uploading your project with Heroku](#j)
+
 ## Prerequisites
 * Rails
 * PostgreSQL
@@ -159,3 +161,20 @@ Right-click on Login Roles and select 'New Login Role...' in Role name, put in y
 ![Picture](https://puu.sh/xtfE9/cacbb89e79.png)
 
 * Make the necessary changes, <kbd>CTRL</kbd>+<kbd>S</kbd> to save and `rails s` in your terminal. To see the changes locally on your browser at 'localhost:3000'
+
+- - - -
+
+# <a name="j"></a> Uploading your project with Heroku
+
+* Create an account at https://www.heroku.com/
+* Open a terminal or command prompt.
+* When you start working on a new computer, generate a new pair of SSH keys by typing $ ssh-keygen -t rsa -C your_email@address.com. Press enter without typing anything when it prompts you for the file and for the passphrase. If it prompts you to overwrite the existing keys, say yes.
+* Run $ heroku login and enter your Heroku credentials when prompted.
+* Run $ heroku keys:add to add the SSH keys for this machine to your Heroku account.
+* Navigate to the project directory in your terminal.
+* Set up your Heroku app.
+- If you haven't created a Heroku app yet, run $ heroku create your_app_name.
+- If you have already created a Heroku app for this project, run $ heroku git:remote -a your_app_name to add a Git remote called heroku that points to your Heroku app. In this case it will artemisproject191117
+* Push your code to Heroku with $ git push heroku master and if necessary, migrate your database using `heroku run rake db:migrate` and `heroku run rake db:seed` if you need to seed the database.
+* When you're done with the machine, remove your SSH keys from Heroku with $ heroku keys:remove your_email@address.com, delete them from the computer with `$ rm ~/.ssh/*`, and log out of Heroku with $ heroku logout.
+If you get the error Permission denied (publickey), run $ rm ~/.ssh/* to clear the SSH settings off the machine, and then try again starting with step 1.
